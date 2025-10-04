@@ -1,0 +1,453 @@
+
+/* ===========================
+   GLOBAL BASE STYLES
+=========================== */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+ 
+  background-size: cover;
+  background-position: center;
+  color: #333;
+  padding: 40px;
+  line-height: 1.7;
+}
+
+/* ===========================
+   HEADINGS & TEXT
+=========================== */
+h1, h2, h3 {
+  text-align: center;
+  color: #004a7c;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  text-align: justify;
+}
+
+a {
+  color: #084688;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: underline;
+}
+
+/* ===========================
+   NAVIGATION LINKS
+=========================== */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  color:blue;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-links a:active {
+  color: rgb(226, 241, 8);
+}
+
+/* ===========================
+   CONTAINERS & LAYOUT
+=========================== */
+.page-wrapper,
+.intro,
+.summary,
+.preamble,
+.supporting,
+footer {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===========================
+   CARD ELEMENTS
+=========================== */
+.card,
+.trait,
+.vns,
+.personality,
+.grid-container,
+.refcontainer {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+/* Vision & Mission */
+.vns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vision,
+.mission {
+  border-left: 5px solid #4CAF50;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/* Personality Section */
+.personality {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+/* ===========================
+   SOCIALS & BIO
+=========================== */
+.profile-pic img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.bio {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.socials img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ===========================
+   REFLECTIONS / NOTES
+=========================== */
+.reflection {
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-left: 6px solid #0d47a1;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.refcontainer {
+  height: 500px;
+  overflow: auto;
+}
+
+/* ===========================
+   RESUME SECTION
+=========================== */
+.resume-container {
+  display: flex;
+  border: 0.6rem solid black;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.res {
+  flex: 3;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.resnav {
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.resnav a {
+  display: block;
+  margin: 0.5rem 0;
+  color: blue;
+  text-decoration: none;
+}
+
+.custom-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  border: none;
+  border-radius: 0.5em;
+  opacity: 0.8;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.custom-btn.enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* ===========================
+   GRID CONTAINERS
+=========================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* ===========================
+   FLIP CARD STYLES
+=========================== */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.flip-card-wrapper {
+  width: 300px;
+  height: 250px;
+  perspective: 1000px;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+}
+
+/* Hover-based flip */
+@media (hover: hover) {
+  .flip-card-wrapper:hover .flip-card {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Checkbox-activated flip */
+input[type="checkbox"]:checked + label .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.front {
+  background: linear-gradient(145deg, #333, #444);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.back {
+  background: linear-gradient(145deg, #4CAF50, #388E3C);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.flip-card h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.flip-card p, .flip-card li {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    background-color: blue;
+    color: blue;
+  }
+  .nav-links a {
+  color: black; 
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+  .flip-card-wrapper {
+    width: 90%;
+    height: 220px;
+  }
+
+  .flip-card p {
+    font-size: 13px;
+  }
+
+  .resnav a {
+    display: inline-block;
+    margin: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    background-color: lightblue;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 950px) {
+  body {
+    background-color: lightgreen;
+    font-size: 18px;
+  }
+}
+
+/* ===========================
+   EXTRA WRAPPER
+=========================== */
+.wrapp {
+  background-color: beige;
+  border-radius: 12px;
+  padding: 10px;
+}
+ .ansection-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 40px 0 20px;
+      color: #333;
+    }
+
+    .ancard-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .ancard {
+      background-color: #fff;
+      width: 280px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .ancard:hover {
+      transform: translateY(-5px);
+    }
+
+    .ancard-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .ancard-content {
+      padding: 15px;
+    }
+
+    .ancard-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .ancard-text {
+      font-size: 0.95rem;
+      color: #555;
+    }
